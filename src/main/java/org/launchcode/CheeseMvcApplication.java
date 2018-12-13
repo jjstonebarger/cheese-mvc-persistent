@@ -1,4 +1,5 @@
-package org.launchcode;
+
+package org.launchcode.classes.cheesemvc;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

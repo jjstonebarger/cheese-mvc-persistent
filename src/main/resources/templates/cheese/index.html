@@ -1,31 +1,34 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-
 <body class="container">
-
-<h1 th:text="${title}">Default Title</h1>
+<h1 th:text="${title}"></h1>
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${cheeses} and ${cheeses.size()}">no cheese :(</p>
+<p th:unless="${cheeses} and ${cheeses.size()}">no cheese</p>
 
+<!--
+    <ul>
+        <li th:each="cheese : ${cheeses}" th:text="${cheese}"></li>
+    </ul>
+-->
+
+<!--
+    <p>Hello</p>
+    -->
 
 <table class="table">
-
     <tr>
-        <th>Name</th>
-        <th>Description</th>
-        <th>Type</th>
+        <td>Name</td><td>:</td><td>Description</td>:<td>Category</td>
     </tr>
-
     <tr th:each="cheese : ${cheeses}">
-        <td th:text="${cheese.name}"></td>
-        <td th:text="${cheese.description}"></td>
-        <td th:text="${cheese.type.name}"></td>
+        <td th:text="${cheese.name}">cheese</td><td>:</td><td th:text="${cheese.description}">description</td>:<td th:text="${cheese.category.name}">category</td>
     </tr>
-
 </table>
+
+<nav th:replace="fragments :: nav-2"></nav>
 
 </body>
 </html>
+

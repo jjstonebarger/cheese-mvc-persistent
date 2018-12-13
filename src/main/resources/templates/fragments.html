@@ -1,20 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<html lang="en" xmlns:th="http://thymeleaf.org/">
 <head th:fragment="head">
-    <meta charset="UTF-8"/>
+    <meta charset="UTF-8" />
     <title th:text="${title}">My Cheeses</title>
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous" />
+    <!--<link rel="stylesheet" th:href="@{/css/styles.css}" /> -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 
 </head>
-<body>
+<body class="container">
 
-<nav th:fragment="navigation">
-    <a href="/cheese">List</a> |
-    <a href="/cheese/add">Add</a> |
-    <a href="/cheese/remove">Remove</a>
+<nav th:fragment="navigation" class="navigation">
+    <a href="/cheese">Cheese List</a>|
+    <a href="/category">Categories</a>|
+    <a href="/menu">Menu</a>
+</nav>
+
+<nav th:fragment="nav-2" class="navigation">
+    <a th:href="'/' + ${area} + '/add'">Add</a>|
+    <a th:href="'/' + ${area} + '/remove'">Remove</a>
 </nav>
 
 </body>
 </html>
+
